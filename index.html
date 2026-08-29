@@ -197,6 +197,47 @@ section{padding:64px 0}
 .insc-card .btn{width:100%;justify-content:center;margin-top:16px}
 .selo-vaga{position:absolute;right:14px;top:16px;background:#e7f0e7;color:#3f7d3f;font-weight:800;font-size:.62rem;letter-spacing:.5px;text-transform:uppercase;padding:.35em .7em;border-radius:999px}
 
+/* ---------- Seja um Associado (seção dedicada) ---------- */
+.assoc{max-width:720px;margin:0 auto;text-align:center;background:#fff;border:1px solid var(--linha);border-radius:var(--raio);box-shadow:var(--sombra);padding:clamp(32px,5vw,52px)}
+.assoc-ic{width:66px;height:66px;margin:0 auto 16px;border-radius:50%;background:linear-gradient(160deg,var(--dourado-sf),#fff);border:1px solid var(--dourado-clr);display:grid;place-items:center}
+.assoc-ic svg{width:32px;height:32px;stroke:var(--dourado)}
+.assoc .kick{display:inline-block;font-weight:800;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--dourado);margin-bottom:8px}
+.assoc h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:.35em}
+.assoc p{color:var(--texto-sf);max-width:560px;margin:0 auto 24px}
+
+/* Botão desabilitado (Em breve) */
+.btn-cinza{background:#e6e9ee;color:#8a94a3;border-color:#e6e9ee;cursor:not-allowed}
+.btn-cinza:hover{background:#e6e9ee;transform:none;box-shadow:none}
+
+/* ===== Cor de referência por área ===== */
+.a-estudos{--cor:#2f6aa6}
+.a-assist{--cor:#2e8b63}
+.a-reunioes{--cor:#c98a1f}
+.a-sociais{--cor:#9a2b4c}
+.a-livraria{--cor:#6a6f8c}
+
+/* Cards de área usando a cor */
+.area{border-top:4px solid var(--cor,var(--dourado-clr))}
+.area .bolha{background:color-mix(in srgb,var(--cor,#4C7BB0) 12%,#fff);border-color:color-mix(in srgb,var(--cor,#4C7BB0) 30%,#fff)}
+.area .bolha svg{stroke:var(--cor,var(--azul))}
+.area:hover{border-color:var(--cor,var(--dourado-clr))}
+.area .mais{color:var(--cor,var(--dourado))}
+
+/* Páginas internas de área tingidas pela cor */
+.view[style] .pg-topo{background:linear-gradient(150deg, color-mix(in srgb,var(--cor,#4C7BB0) 22%,#fff) 0%, #fff 72%, var(--dourado-sf) 140%)}
+.view[style] .pg-topo .kick{color:var(--cor,var(--dourado))}
+.view[style] .pg-topo::after{background:radial-gradient(circle at 30% 30%, color-mix(in srgb,var(--cor,#E4C171) 45%,transparent), transparent 70%)}
+.view[style] .bloco .rot .ic{background:color-mix(in srgb,var(--cor,#234E7D) 12%,#fff)}
+.view[style] .bloco .rot .ic svg{stroke:var(--cor,var(--azul))}
+.view[style] .bloco .sigla{color:var(--cor,var(--dourado))}
+.view[style] .info-linha{background:color-mix(in srgb,var(--cor,#C4922F) 14%,#fff);color:var(--cor,#a9791f)}
+
+/* Botão "voltar às atividades" */
+.pg-voltar{margin-top:18px}
+.voltar-rodape{text-align:center;padding:0 22px 56px}
+.btn-voltar{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;color:var(--cor,var(--azul));background:color-mix(in srgb,var(--cor,#234E7D) 8%,#fff);border:1px solid color-mix(in srgb,var(--cor,#234E7D) 28%,#fff);padding:.6em 1.2em;border-radius:999px;cursor:pointer;transition:.2s}
+.btn-voltar:hover{background:color-mix(in srgb,var(--cor,#234E7D) 16%,#fff);transform:translateX(-3px)}
+
 /* fundos alternados */
 .bg-ceu{background:var(--ceu-2)}
 .bg-creme{background:var(--creme)}
@@ -405,31 +446,31 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
         <p>Clique em uma área para conhecer as atividades em detalhes.</p>
       </div>
       <div class="areas">
-        <div class="area" onclick="irPara('estudos')">
+        <div class="area a-estudos" onclick="irPara('estudos')">
           <div class="bolha"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 8l9 4 9-4-9-4Z"/><path d="M7 10v5c0 1 2.2 2.5 5 2.5s5-1.5 5-2.5v-5"/><path d="M21 8v5"/></svg></div>
           <h3>Estudos Doutrinários</h3>
           <p>ESDE, GPEEK, Evangelização Infantojuvenil, cursos básicos e o MEP.</p>
           <span class="mais">Saiba mais →</span>
         </div>
-        <div class="area" onclick="irPara('assistencia')">
+        <div class="area a-assist" onclick="irPara('assistencia')">
           <div class="bolha"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 22l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></div>
           <h3>Assistência Espiritual</h3>
           <p>Atendimento Fraterno, Assistência à luz do Evangelho e Educação dos Sentimentos.</p>
           <span class="mais">Saiba mais →</span>
         </div>
-        <div class="area" onclick="irPara('reunioes')">
+        <div class="area a-reunioes" onclick="irPara('reunioes')">
           <div class="bolha"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20v-1a4 4 0 0 1 4-4h1"/><path d="M15 15h1a4 4 0 0 1 4 4v1"/><circle cx="8.5" cy="8" r="3"/><circle cx="16" cy="9" r="2.5"/></svg></div>
           <h3>Reuniões Públicas</h3>
           <p>Palestra Pública, Estudo do Evangelho (ESE) e do Livro dos Espíritos (ESLE).</p>
           <span class="mais">Saiba mais →</span>
         </div>
-        <div class="area" onclick="irPara('sociais')">
+        <div class="area a-sociais" onclick="irPara('sociais')">
           <div class="bolha"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/><path d="M19 11a2.5 2.5 0 1 0-2-4"/><path d="M5 11a2.5 2.5 0 1 1 2-4"/></svg></div>
           <h3>Atividades Sociais</h3>
           <p>Campanha Auta de Sousa, trabalho com gestantes, sopa no Timbó e Lanche da Esperança.</p>
           <span class="mais">Saiba mais →</span>
         </div>
-        <div class="area" onclick="irPara('livraria')">
+        <div class="area a-livraria" onclick="irPara('livraria')">
           <div class="bolha"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5Z"/><path d="M4 5.5V20.5A2.5 2.5 0 0 1 6.5 18H20"/></svg></div>
           <h3>Livraria Fonte de Luz</h3>
           <p>Publicações da literatura espírita e encomenda do livro do seu interesse.</p>
@@ -458,7 +499,7 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
           <h3>Estudo Sistematizado da Doutrina Espírita</h3>
           <p>Estudo metódico das obras de Allan Kardec, com duração de três anos. É a porta de entrada para os trabalhos da Casa.</p>
           <span class="insc-quando">Sábados, às 17h · Presencial</span>
-          <a class="btn btn-ouro" href="#" onclick="return abrirInscricao('ESDE — Estudo Sistematizado da Doutrina Espírita')">Inscrever-se</a>
+          <span class="btn btn-cinza" aria-disabled="true">Em breve</span>
         </div>
 
         <!-- EADE -->
@@ -469,7 +510,7 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
           <h3>Estudo Aprofundado da Doutrina Espírita</h3>
           <p>Dá continuidade ao ESDE, aprofundando o estudo das obras da Codificação e das complementares para quem deseja avançar na doutrina.</p>
           <span class="insc-quando">Consulte os horários</span>
-          <a class="btn btn-ouro" href="#" onclick="return abrirInscricao('EADE — Estudo Aprofundado da Doutrina Espírita')">Inscrever-se</a>
+          <a class="btn btn-ouro" href="https://forms.gle/yeQvfPVg2LudLta37" target="_blank" rel="noopener">Inscrever-se</a>
         </div>
 
         <!-- EVANGELIZAÇÃO -->
@@ -479,7 +520,7 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
           <h3>Evangelização Infantojuvenil</h3>
           <p>Para crianças de 7 a 12 anos e adolescentes de 13 a 18 anos, com atividades lúdicas e afetivas fundamentadas no Evangelho de Jesus.</p>
           <span class="insc-quando">Quartas-feiras, às 19h30</span>
-          <a class="btn btn-ouro" href="#" onclick="return abrirInscricao('Evangelização Infantojuvenil')">Inscrever-se</a>
+          <a class="btn btn-ouro" href="https://docs.google.com/forms/d/e/1FAIpQLSeASEEi6ypPXZtP2KJJWvO_3hbz9RpdxqZerifm4j6CiZjQhA/viewform" target="_blank" rel="noopener">Inscrever-se</a>
         </div>
 
         <!-- CURSOS BÁSICOS -->
@@ -489,29 +530,22 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
           <h3>Cursos Básicos</h3>
           <p>Curso Básico de Espiritismo e Curso Básico da Mediunidade, com oito semanas cada — ideais para os primeiros passos no Espiritismo.</p>
           <span class="insc-quando">Turmas periódicas</span>
-          <a class="btn btn-ouro" href="#" onclick="return abrirInscricao('Cursos Básicos (Espiritismo e Mediunidade)')">Inscrever-se</a>
+          <a class="btn btn-ouro" href="https://forms.gle/uMShuh75oU9LdUnj7" target="_blank" rel="noopener">Inscrever-se</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ATENDIMENTO FRATERNO + SEJA UM ASSOCIADO -->
+  <!-- SEJA UM ASSOCIADO (seção dedicada) -->
   <section class="bg-ceu">
     <div class="container">
-      <div class="destaques">
-        <div class="card-dst">
-          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 22l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></div>
-          <h3>Atendimento Fraterno</h3>
-          <span class="quando">Terças-feiras, 20h</span>
-          <p>É a oportunidade de um diálogo à luz da doutrina espírita para compreendermos nossas atitudes e relações e sermos ajudados pela espiritualidade. Para participar, basta comparecer à Assesesk.</p>
-        </div>
-        <div class="card-dst">
-          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z"/></svg></div>
-          <h3>Seja um Associado</h3>
-          <p>Faça parte do nosso quadro de associados e colabore para a manutenção e o crescimento das atividades da Casa.</p>
-          <div style="margin-top:6px"><a class="btn btn-ouro" onclick="irPara('sobre')">Quero me associar</a></div>
-        </div>
+      <div class="assoc">
+        <div class="assoc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z"/></svg></div>
+        <span class="kick">Faça parte</span>
+        <h2>Seja um Associado</h2>
+        <p>Faça parte do nosso quadro de associados e colabore para a manutenção e o crescimento das atividades da Casa. Toda contribuição fortalece o trabalho de estudo, assistência espiritual e ação social da Assesesk.</p>
+        <a class="btn btn-ouro" href="https://docs.google.com/forms/d/e/1FAIpQLSdUuMS-5nReO0aOHYG20GzXWww_1pRK9A1Q892dAXqmvHNqTA/viewform" target="_blank" rel="noopener">Quero me associar</a>
       </div>
     </div>
   </section>
@@ -637,22 +671,22 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
         <div class="risco"></div>
       </div>
       <div class="areas">
-        <div class="area" onclick="irPara('estudos')">
+        <div class="area a-estudos" onclick="irPara('estudos')">
           <div class="bolha"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 8l9 4 9-4-9-4Z"/><path d="M7 10v5c0 1 2.2 2.5 5 2.5s5-1.5 5-2.5v-5"/><path d="M21 8v5"/></svg></div>
           <h3>Estudos Doutrinários</h3>
           <span class="mais">Saiba mais →</span>
         </div>
-        <div class="area" onclick="irPara('assistencia')">
+        <div class="area a-assist" onclick="irPara('assistencia')">
           <div class="bolha"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 22l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></div>
           <h3>Assistência Espiritual</h3>
           <span class="mais">Saiba mais →</span>
         </div>
-        <div class="area" onclick="irPara('reunioes')">
+        <div class="area a-reunioes" onclick="irPara('reunioes')">
           <div class="bolha"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20v-1a4 4 0 0 1 4-4h1"/><path d="M15 15h1a4 4 0 0 1 4 4v1"/><circle cx="8.5" cy="8" r="3"/><circle cx="16" cy="9" r="2.5"/></svg></div>
           <h3>Reuniões Públicas</h3>
           <span class="mais">Saiba mais →</span>
         </div>
-        <div class="area" onclick="irPara('sociais')">
+        <div class="area a-sociais" onclick="irPara('sociais')">
           <div class="bolha"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/><path d="M19 11a2.5 2.5 0 1 0-2-4"/><path d="M5 11a2.5 2.5 0 1 1 2-4"/></svg></div>
           <h3>Atividades Sociais</h3>
           <span class="mais">Saiba mais →</span>
@@ -665,12 +699,13 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
 <!-- ======================================================================
      VIEW: ESTUDOS DOUTRINÁRIOS
      ====================================================================== -->
-<div class="view" id="view-estudos">
+<div class="view" id="view-estudos" style="--cor:#2f6aa6">
   <div class="pg-topo">
     <div class="container">
       <span class="kick">Atividades</span>
       <h1>Estudos Doutrinários</h1>
       <p class="migalha"><a onclick="irPara('inicio')">Início</a> › <a onclick="irPara('atividades')">Atividades</a> › Estudos Doutrinários</p>
+      <div class="pg-voltar"><a class="btn-voltar" onclick="irPara('atividades')">← Ver todas as atividades</a></div>
     </div>
   </div>
   <section>
@@ -712,17 +747,19 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
       </div>
     </div>
   </section>
+  <div class="voltar-rodape"><a class="btn-voltar" onclick="irPara('atividades')">← Ver todas as atividades</a></div>
 </div>
 
 <!-- ======================================================================
      VIEW: ASSISTÊNCIA ESPIRITUAL
      ====================================================================== -->
-<div class="view" id="view-assistencia">
+<div class="view" id="view-assistencia" style="--cor:#2e8b63">
   <div class="pg-topo">
     <div class="container">
       <span class="kick">Atividades</span>
       <h1>Assistência Espiritual</h1>
       <p class="migalha"><a onclick="irPara('inicio')">Início</a> › <a onclick="irPara('atividades')">Atividades</a> › Assistência Espiritual</p>
+      <div class="pg-voltar"><a class="btn-voltar" onclick="irPara('atividades')">← Ver todas as atividades</a></div>
     </div>
   </div>
   <section>
@@ -746,17 +783,19 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
       </div>
     </div>
   </section>
+  <div class="voltar-rodape"><a class="btn-voltar" onclick="irPara('atividades')">← Ver todas as atividades</a></div>
 </div>
 
 <!-- ======================================================================
      VIEW: REUNIÕES PÚBLICAS
      ====================================================================== -->
-<div class="view" id="view-reunioes">
+<div class="view" id="view-reunioes" style="--cor:#c98a1f">
   <div class="pg-topo">
     <div class="container">
       <span class="kick">Atividades</span>
       <h1>Reuniões Públicas</h1>
       <p class="migalha"><a onclick="irPara('inicio')">Início</a> › <a onclick="irPara('atividades')">Atividades</a> › Reuniões Públicas</p>
+      <div class="pg-voltar"><a class="btn-voltar" onclick="irPara('atividades')">← Ver todas as atividades</a></div>
     </div>
   </div>
   <section>
@@ -780,17 +819,19 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
       </div>
     </div>
   </section>
+  <div class="voltar-rodape"><a class="btn-voltar" onclick="irPara('atividades')">← Ver todas as atividades</a></div>
 </div>
 
 <!-- ======================================================================
      VIEW: ATIVIDADES SOCIAIS
      ====================================================================== -->
-<div class="view" id="view-sociais">
+<div class="view" id="view-sociais" style="--cor:#9a2b4c">
   <div class="pg-topo">
     <div class="container">
       <span class="kick">Atividades</span>
       <h1>Atividades Sociais</h1>
       <p class="migalha"><a onclick="irPara('inicio')">Início</a> › <a onclick="irPara('atividades')">Atividades</a> › Atividades Sociais</p>
+      <div class="pg-voltar"><a class="btn-voltar" onclick="irPara('atividades')">← Ver todas as atividades</a></div>
     </div>
   </div>
   <section>
@@ -809,8 +850,15 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
         <p>A reunião dos sábados é dividida em três partes: na primeira, são introduzidos os conhecimentos do Espiritismo e o ensino do Evangelho, nos 20 minutos iniciais, servindo também como harmonização; na segunda, são tratados assuntos pertinentes à saúde, educação, cidadania e outros de interesse das assistidas, em 30 minutos; e na terceira, um lanche é distribuído com as gestantes presentes nos 10 minutos finais do trabalho.</p>
         <span class="info-linha">Sábados, às 16h · Presencial</span>
       </div>
+
+      <div class="bloco">
+        <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Z"/><path d="M17 9h2.2a2.5 2.5 0 0 1 0 5H17"/><path d="M7 3v2M10 3v2M13 3v2"/></svg></div><div><h3>Lanche da Esperança</h3></div></div>
+        <p>Atividade realizada quinzenalmente, aos sábados, das 15h30 às 17h30, com o objetivo de preparar, montar e distribuir lanches para as mulheres atendidas pelo Programa de Promoção Social, destinado a gestantes em situação de vulnerabilidade e seus filhos.</p>
+        <span class="info-linha">Sábados, 15h30–17h30 · quinzenal</span>
+      </div>
     </div>
   </section>
+  <div class="voltar-rodape"><a class="btn-voltar" onclick="irPara('atividades')">← Ver todas as atividades</a></div>
 </div>
 
 <!-- ======================================================================
