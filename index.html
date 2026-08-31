@@ -254,6 +254,15 @@ section{padding:64px 0}
 .dia .corpo{padding:14px 18px 18px;display:flex;flex-direction:column;gap:14px}
 .ativ{border-left:3px solid var(--dourado-clr);padding-left:12px}
 .ativ .nome{font-weight:700;font-size:.95rem;color:var(--azul-esc);display:block}
+/* nome clicável: leva à descrição da atividade */
+.ativ .nome-link{
+  background:none;border:0;padding:0;margin:0;width:100%;
+  font-family:var(--sans);line-height:1.35;text-align:left;cursor:pointer;
+  border-bottom:1px dashed transparent;transition:.15s;
+}
+.ativ .nome-link:hover,.ativ .nome-link:focus-visible{color:var(--azul);border-bottom-color:var(--dourado-clr)}
+.ativ .nome-link:focus-visible{outline:2px solid var(--azul);outline-offset:3px;border-radius:4px}
+.ativ .nome-link::after{content:" ›";color:var(--dourado);font-weight:800}
 .ativ .hora{font-size:.82rem;color:var(--texto-sf);display:block;margin-top:2px}
 .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:.18em .6em;border-radius:999px;margin-top:6px}
 .tag.pres{background:#e7f0e7;color:#3f7d3f}
@@ -287,7 +296,9 @@ section{padding:64px 0}
 .migalha a{cursor:pointer;font-weight:600}
 
 /* ---------- Blocos de conteúdo (páginas internas) ---------- */
-.bloco{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);box-shadow:var(--sombra);padding:clamp(24px,4vw,42px);margin-bottom:26px}
+.bloco{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);box-shadow:var(--sombra);padding:clamp(24px,4vw,42px);margin-bottom:26px;scroll-margin-top:96px;transition:box-shadow .3s ease,border-color .3s ease}
+/* realce temporário ao chegar pela Programação */
+.bloco.destaque{border-color:var(--cor,var(--dourado));box-shadow:0 0 0 4px color-mix(in srgb,var(--cor,#E4C171) 22%,transparent),var(--sombra-ft)}
 .bloco:last-child{margin-bottom:0}
 .bloco .rot{display:flex;align-items:center;gap:14px;margin-bottom:16px}
 .bloco .rot .ic{width:48px;height:48px;flex:0 0 48px;border-radius:12px;background:var(--ceu-1);display:grid;place-items:center}
@@ -604,47 +615,47 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
         <span class="kick">Programação semanal</span>
         <h2>Atividades públicas por dia</h2>
         <div class="risco"></div>
-        <p>Todas as atividades abaixo são abertas ao público. As etiquetas indicam se são presenciais, virtuais ou híbridas.</p>
+        <p>Todas as atividades abaixo são abertas ao público. As etiquetas indicam se são presenciais, virtuais ou híbridas. Toque no nome da atividade para ler a descrição completa.</p>
       </div>
       <div class="grade">
         <!-- SEGUNDA -->
         <div class="dia d-seg">
           <div class="cab">Segunda</div>
           <div class="corpo">
-            <div class="ativ"><span class="nome">Estudo Sistematizado do Evangelho (ESE)</span><span class="hora">20h</span><span class="tag pres">Presencial</span></div>
-            <div class="ativ"><span class="nome">Curso Básico de Espiritismo</span><span class="hora">19h30 · ago–set</span><span class="tag pres">Presencial</span></div>
-            <div class="ativ"><span class="nome">Curso Básico de Mediunidade</span><span class="hora">19h30 · out–nov</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('reunioes','at-ese')" title="Ver a descrição desta atividade">Estudo Sistematizado do Evangelho (ESE)</button><span class="hora">20h</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('estudos','at-cursos')" title="Ver a descrição desta atividade">Curso Básico de Espiritismo</button><span class="hora">19h30 · ago–set</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('estudos','at-cursos')" title="Ver a descrição desta atividade">Curso Básico de Mediunidade</button><span class="hora">19h30 · out–nov</span><span class="tag pres">Presencial</span></div>
           </div>
         </div>
         <!-- TERÇA -->
         <div class="dia d-ter">
           <div class="cab">Terça</div>
           <div class="corpo">
-            <div class="ativ"><span class="nome">Atendimento Fraterno</span><span class="hora">20h</span><span class="tag pres">Presencial</span></div>
-            <div class="ativ"><span class="nome">Reunião de Assistência à Luz do Evangelho</span><span class="hora">20h</span><span class="tag pres">Presencial</span></div>
-            <div class="ativ"><span class="nome">Educação dos Sentimentos</span><span class="hora">20h</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('assistencia','at-fraterno')" title="Ver a descrição desta atividade">Atendimento Fraterno</button><span class="hora">20h</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('assistencia','at-evangelho')" title="Ver a descrição desta atividade">Reunião de Assistência à Luz do Evangelho</button><span class="hora">20h</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('assistencia','at-sentimentos')" title="Ver a descrição desta atividade">Educação dos Sentimentos</button><span class="hora">20h</span><span class="tag pres">Presencial</span></div>
           </div>
         </div>
         <!-- QUARTA -->
         <div class="dia d-qua">
           <div class="cab">Quarta</div>
           <div class="corpo">
-            <div class="ativ"><span class="nome">Evangelização Infantojuvenil</span><span class="hora">19h30</span><span class="tag pres">Presencial</span></div>
-            <div class="ativ"><span class="nome">Palestra Pública</span><span class="hora">19h</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('estudos','at-evangelizacao')" title="Ver a descrição desta atividade">Evangelização Infantojuvenil</button><span class="hora">19h30</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('reunioes','at-palestra')" title="Ver a descrição desta atividade">Palestra Pública</button><span class="hora">19h</span><span class="tag pres">Presencial</span></div>
           </div>
         </div>
         <!-- QUINTA -->
         <div class="dia d-qui">
           <div class="cab">Quinta</div>
           <div class="corpo">
-            <div class="ativ"><span class="nome">Estudo Sistematizado de O Livro dos Espíritos (ESLE)</span><span class="hora">19h30</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('reunioes','at-esle')" title="Ver a descrição desta atividade">Estudo Sistematizado de O Livro dos Espíritos (ESLE)</button><span class="hora">19h30</span><span class="tag pres">Presencial</span></div>
           </div>
         </div>
         <!-- SEXTA -->
         <div class="dia d-sex">
           <div class="cab">Sexta</div>
           <div class="corpo">
-            <div class="ativ"><span class="nome">Grupo de Pesquisas e Estudos Espíritas Kardecista (GPEEK)</span><span class="hora">19h30 · quinzenal</span><span class="tag hib">Híbrido</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('estudos','at-gpeek')" title="Ver a descrição desta atividade">Grupo de Pesquisas e Estudos Espíritas Kardecista (GPEEK)</button><span class="hora">19h30 · quinzenal</span><span class="tag hib">Híbrido</span></div>
             <div class="ativ"><span class="nome">Saúde Emocional com Joanna de Ângelis (SEJA)</span><span class="hora">19h · quinzenal</span><span class="tag pres">Presencial</span></div>
           </div>
         </div>
@@ -652,19 +663,19 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
         <div class="dia d-sab">
           <div class="cab">Sábado</div>
           <div class="corpo">
-            <div class="ativ"><span class="nome">Campanha da Fraternidade Auta de Sousa</span><span class="hora">8h</span><span class="tag pres">Presencial</span></div>
-            <div class="ativ"><span class="nome">Trabalho de Assistência às Gestantes</span><span class="hora">16h</span><span class="tag pres">Presencial</span></div>
-            <div class="ativ"><span class="nome">Mediunidade: Estudo e Prática (MEP)</span><span class="hora">16h</span><span class="tag pres">Presencial</span></div>
-            <div class="ativ"><span class="nome">Estudo Sistematizado da Doutrina Espírita (ESDE)</span><span class="hora">17h</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('sociais','at-auta')" title="Ver a descrição desta atividade">Campanha da Fraternidade Auta de Sousa</button><span class="hora">8h</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('sociais','at-gestantes')" title="Ver a descrição desta atividade">Trabalho de Assistência às Gestantes</button><span class="hora">16h</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('estudos','at-mep')" title="Ver a descrição desta atividade">Mediunidade: Estudo e Prática (MEP)</button><span class="hora">16h</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('estudos','at-esde')" title="Ver a descrição desta atividade">Estudo Sistematizado da Doutrina Espírita (ESDE)</button><span class="hora">17h</span><span class="tag pres">Presencial</span></div>
           </div>
         </div>
         <!-- DOMINGO -->
         <div class="dia d-dom">
           <div class="cab">Domingo</div>
           <div class="corpo">
-            <div class="ativ"><span class="nome">Palestra Pública</span><span class="hora">9h30 · 2º domingo do mês</span><span class="tag mens">Mensal</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('reunioes','at-palestra')" title="Ver a descrição desta atividade">Palestra Pública</button><span class="hora">9h30 · 2º domingo do mês</span><span class="tag mens">Mensal</span></div>
             <div class="ativ"><span class="nome">Unidos pelo Bem — visita a instituições de longa permanência</span><span class="hora">13h30 · mensal</span><span class="tag mens">Mensal</span></div>
-            <div class="ativ"><span class="nome">Estudo Sistematizado do Evangelho (ESE)</span><span class="hora">17h</span><span class="tag virt">Virtual · Meet</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('reunioes','at-ese')" title="Ver a descrição desta atividade">Estudo Sistematizado do Evangelho (ESE)</button><span class="hora">17h</span><span class="tag virt">Virtual · Meet</span></div>
           </div>
         </div>
       </div>
@@ -732,25 +743,25 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
   </div>
   <section>
     <div class="container leitura">
-      <div class="bloco">
+      <div id="at-esde" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 8l9 4 9-4-9-4Z"/><path d="M7 10v5c0 1 2.2 2.5 5 2.5s5-1.5 5-2.5v-5"/></svg></div><div><span class="sigla">ESDE</span><h3>Estudo Sistematizado da Doutrina Espírita</h3></div></div>
         <p>É um programa de estudo metódico e sistematizado, fundamentado no conjunto de princípios e leis revelados pelos Espíritos Superiores e contidos nas obras de Allan Kardec. Tem a duração de três anos e, além de permitir ao participante o contato com os princípios espíritas, se constitui em instrumento de preparação de trabalhadores para a instituição. Para se engajar nas atividades da Casa é preciso participar do ESDE.</p>
         <span class="info-linha">Sábados, às 17h · Presencial</span>
       </div>
 
-      <div class="bloco">
+      <div id="at-evangelizacao" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/><path d="M9 12l3 3 3-3"/></svg></div><div><h3>Evangelização Infantojuvenil</h3></div></div>
         <p>A Evangelização da Assesesk atende crianças dos 7 aos 12 anos e adolescentes dos 13 aos 18 anos de idade por meio de um conjunto de atividades que visam, entre outros objetivos, estimular o desenvolvimento da postura ativa e participativa da criança ou jovem em seu processo evolutivo e contribuir para a formação integral e o exercício pleno do amor e da prática do bem comum. Fundamentadas no Evangelho de Jesus e nos ensinamentos da Doutrina Espírita, as atividades utilizam estratégias didáticas interativas, dinâmicas, vivenciais, lúdicas e afetivas, integradas ao cotidiano da vida em sociedade.</p>
         <span class="info-linha">Quartas-feiras, às 19h30</span>
       </div>
 
-      <div class="bloco">
+      <div id="at-gpeek" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5Z"/><path d="M4 5.5V20.5A2.5 2.5 0 0 1 6.5 18H20"/></svg></div><div><span class="sigla">GPEEK</span><h3>Grupo de Pesquisa e Estudos Espíritas Kardecista</h3></div></div>
         <p>O Grupo surgiu em 2012 para atender o anseio da turma do Estudo Sistematizado da Doutrina Espírita (ESDE), que sentiu necessidade de aprofundamento de temáticas espíritas, através do estudo das obras básicas e complementares. Atualmente encontra-se analisando as obras psicografadas pelo Espírito André Luiz. Desenvolve ainda pesquisas, seminários e palestras sobre o conteúdo estudado. Qualquer pessoa pode participar do grupo, tenha conhecimento do Espiritismo ou não.</p>
         <span class="info-linha">Sextas-feiras, 19h30 · Híbrido (quinzenal)</span>
       </div>
 
-      <div class="bloco">
+      <div id="at-cursos" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg></div><div><h3>Cursos Básicos</h3></div></div>
         <div class="sub-bloco" style="border-top:0;padding-top:0;margin-top:0">
           <h4>Curso Básico de Espiritismo</h4>
@@ -762,7 +773,7 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
         </div>
       </div>
 
-      <div class="bloco">
+      <div id="at-mep" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 7.5l2.1 1.2M17.7 15.3l2.1 1.2M4.2 16.5l2.1-1.2M17.7 8.7l2.1-1.2"/><circle cx="12" cy="12" r="3.4"/></svg></div><div><span class="sigla">MEP</span><h3>Mediunidade: Estudo e Prática</h3></div></div>
         <p>O MEP tem como objetivo o estudo teórico e prático da mediunidade, fundamentado na Codificação Espírita e nas obras complementares. O estudo é voltado aos interessados em aprofundar seus conhecimentos sobre o intercâmbio mediúnico e em vivenciar a educação mediúnica, proporcionando momentos de preparação aos que pretendem atuar em grupos mediúnicos.</p>
         <span class="info-linha">Sábados, às 16h · Presencial</span>
@@ -786,19 +797,19 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
   </div>
   <section>
     <div class="container leitura">
-      <div class="bloco">
+      <div id="at-fraterno" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 22l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></div><div><h3>Atendimento Fraterno</h3></div></div>
         <p>O atendimento fraterno pelo diálogo consiste em receber aquele que busca o Centro Espírita, dando-lhe a oportunidade de expor, livremente, em caráter privativo e sigiloso, suas dificuldades e necessidades, e orientá-lo dentro dos princípios do Evangelho à luz da Doutrina Espírita. Nesse espaço de escuta todos são atendidos independentemente de possuírem ou não algum credo religioso.</p>
         <span class="info-linha">Terças-feiras, às 20h</span>
       </div>
 
-      <div class="bloco">
+      <div id="at-evangelho" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5Z"/><path d="M4 5.5V20.5A2.5 2.5 0 0 1 6.5 18H20"/><path d="M12 3v15"/></svg></div><div><h3>Assistência à luz do Evangelho</h3></div></div>
         <p>Acontece às terças-feiras, às 20h, e tem a função de auxiliar as pessoas que buscam conhecer-se. Por meio do diálogo sobre passagens do Evangelho, o grupo recebe as pessoas que foram encaminhadas à assistência espiritual na Casa, mas também é aberto ao público em geral, tendo como premissa de trabalho que a palavra do Evangelho é primeiramente voltada para cada um de nós. Não é necessário fazer inscrição para participar.</p>
         <span class="info-linha">Terças-feiras, às 20h · Aberto ao público</span>
       </div>
 
-      <div class="bloco">
+      <div id="at-sentimentos" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z"/></svg></div><div><h3>Educação dos Sentimentos</h3></div></div>
         <p>Atendimento em grupo que orienta e ajuda na compreensão dos sentimentos, fundamentado em O Evangelho segundo o Espiritismo, com o objetivo de esclarecer e nortear para o autoconhecimento. Com duração de 10 encontros, é um grupo que recebe participantes durante todo o ano, sejam trabalhadores da Casa ou pessoas encaminhadas pelo Atendimento Fraterno.</p>
         <span class="info-linha">Terças-feiras, às 20h · Sem inscrição</span>
@@ -822,20 +833,20 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
   </div>
   <section>
     <div class="container leitura">
-      <div class="bloco">
+      <div id="at-palestra" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M9 6h6"/><rect x="4" y="9" width="16" height="5" rx="1.5"/><path d="M7 14v6M17 14v6M5 20h14"/></svg></div><div><h3>Palestra Pública</h3></div></div>
         <p>A cada quarta-feira um palestrante convidado discorre sobre temas fundamentados no conjunto de princípios e leis revelados pelos Espíritos Superiores e contidos nas obras de Allan Kardec. Tem a duração de 1 (uma) hora e, ao final, é oferecido a aplicação do Passe Individual.</p>
         <p>Também há palestra no segundo domingo do mês, às 9h30, com aplicação de passe coletivo ao final.</p>
         <span class="info-linha">Quartas, 19h · e 2º domingo do mês, 9h30</span>
       </div>
 
-      <div class="bloco">
+      <div id="at-ese" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5Z"/><path d="M4 5.5V20.5A2.5 2.5 0 0 1 6.5 18H20"/></svg></div><div><span class="sigla">ESE</span><h3>Estudo Sistematizado do Evangelho</h3></div></div>
         <p>O Estudo Sistematizado do Evangelho (ESE) é uma reunião pública que visa o estudo sequenciado do Evangelho segundo o Espiritismo. A cada semana um tema é debatido com o público, que tem a oportunidade de expor a sua interpretação e construir coletivamente o entendimento das máximas cristãs que foram trazidas por Jesus e interpretadas por Allan Kardec a partir da orientação dos espíritos superiores.</p>
         <span class="info-linha">Segundas, 20h (presencial) · Domingos, 17h (virtual)</span>
       </div>
 
-      <div class="bloco">
+      <div id="at-esle" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5Z"/><path d="M4 5.5V20.5A2.5 2.5 0 0 1 6.5 18H20"/><circle cx="12" cy="10.5" r="2"/></svg></div><div><span class="sigla">ESLE</span><h3>Estudo Sistematizado do Livro dos Espíritos</h3></div></div>
         <p>O Estudo Sistematizado do Livro dos Espíritos (ESLE) é uma reunião pública que visa o estudo sequenciado dessa obra, organizada em 1.019 perguntas e respostas por Allan Kardec. A cada semana um tema é debatido com o público, que tem a oportunidade de expor a sua interpretação e construir coletivamente o entendimento das questões relacionadas: as causas primárias, o mundo dos Espíritos, as leis morais e as esperanças e consolações.</p>
         <span class="info-linha">Quintas-feiras, às 19h30 · Presencial</span>
@@ -859,14 +870,14 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
   </div>
   <section>
     <div class="container leitura">
-      <div class="bloco">
+      <div id="at-auta" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/><path d="M19 11a2.5 2.5 0 1 0-2-4"/><path d="M5 11a2.5 2.5 0 1 1 2-4"/></svg></div><div><h3>Campanha da Fraternidade Auta de Sousa</h3></div></div>
         <p>A campanha tem como objetivo divulgar os ensinamentos de Jesus através da Doutrina Espírita aos lares visitados, por meio de uma palavra de conforto presente nas mensagens transmitidas por Espíritos Superiores. E também arrecadar doações de alimentos, roupas e calçados, que são distribuídos com as gestantes da Comunidade do Timbó assistidas pela Assesesk.</p>
         <p>O trabalho acontece em duas etapas. Na primeira semana, os caravaneiros distribuem nos lares visitados as mensagens espíritas e a carta-pedido dos donativos, que contém as explicações do trabalho e as informações sobre a Assesesk. Na segunda semana, são distribuídas mais mensagens e realizada a coleta das doações.</p>
         <span class="info-linha">Sábados, às 8h · Presencial</span>
       </div>
 
-      <div class="bloco">
+      <div id="at-gestantes" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z"/><circle cx="12" cy="10" r="1.5"/></svg></div><div><h3>Programa de Promoção Social com Gestantes Carentes</h3></div></div>
         <p>O trabalho iniciou em 1998 buscando atender às gestantes conjugando ajuda material, orientação de saúde e socorro espiritual, sem imposições religiosas, visando promover a gestante e sua família nos aspectos biopsicossocial e espiritual, à luz da Doutrina Espírita, possibilitando-lhes refletir na grandeza dos ensinamentos de Jesus e conscientizando-lhes quanto às possibilidades de mudanças tanto na vida exterior como na interior.</p>
         <p>Seu objetivo é introduzir orientações de saúde e ensinamentos da doutrina espírita na vida das gestantes assistidas de forma satisfatória e dinâmica. Como critério de inscrição, a gestante precisa estar no máximo no terceiro ou quarto (3º/4º) mês de gravidez e apresentar o comprovante do Pré-Natal mensalmente, para comprovação do acompanhamento médico da gestação.</p>
@@ -1015,7 +1026,7 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
 /* ===================================================================
    Navegação entre "páginas" (views) sem recarregar
    =================================================================== */
-function irPara(id){
+function irPara(id, ancora){
   document.querySelectorAll('.view').forEach(function(v){ v.classList.remove('on'); });
   var alvo = document.getElementById('view-'+id);
   if(alvo){ alvo.classList.add('on'); }
@@ -1030,8 +1041,32 @@ function irPara(id){
   });
 
   fecharMenu();
-  rolarTopo();
+  if(ancora){ rolarAte(ancora); } else { rolarTopo(); }
   avisarAltura();   /* atualiza altura no Wix (se aplicável) */
+}
+
+/* Rola até um bloco de atividade e o destaca por alguns segundos */
+function rolarAte(ancora){
+  var el = document.getElementById(ancora);
+  if(!el){ rolarTopo(); return; }
+
+  document.querySelectorAll('.bloco.destaque').forEach(function(b){ b.classList.remove('destaque'); });
+
+  el.classList.add('destaque');
+  clearTimeout(rolarAte._t);
+  rolarAte._t = setTimeout(function(){ el.classList.remove('destaque'); }, 2800);
+
+  /* getBoundingClientRect força o recálculo do layout da view recém-exibida,
+     então a medida já é a definitiva — sem depender de requestAnimationFrame,
+     que não dispara quando a página está num iframe fora de vista. */
+  var topo = document.querySelector('header.topo');
+  var folga = (topo ? topo.offsetHeight : 0) + 18;   /* não deixa o cabeçalho fixo cobrir o bloco */
+  var atual = window.pageYOffset || document.documentElement.scrollTop || 0;
+  var y = el.getBoundingClientRect().top + atual - folga;
+  if(y < 0){ y = 0; }
+  rolarAte._y = y;
+  try{ window.scrollTo({top:y, behavior:'smooth'}); }
+  catch(e){ window.scrollTo(0, y); }
 }
 
 /* Rolar para o topo — funciona dentro e fora de iframe */
