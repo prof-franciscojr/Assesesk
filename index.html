@@ -481,7 +481,7 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
         <div class="area a-estudos" onclick="irPara('estudos')">
           <div class="bolha"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 8l9 4 9-4-9-4Z"/><path d="M7 10v5c0 1 2.2 2.5 5 2.5s5-1.5 5-2.5v-5"/><path d="M21 8v5"/></svg></div>
           <h3>Estudos Doutrinários</h3>
-          <p>ESDE, GPEEK, Evangelização Infantojuvenil, cursos básicos e o MEP.</p>
+          <p>ESDE, EADE, GPEEK, Evangelização Infantojuvenil, cursos básicos, MEP e o SEJA.</p>
           <span class="mais">Saiba mais →</span>
         </div>
         <div class="area a-assist" onclick="irPara('assistencia')">
@@ -499,7 +499,7 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
         <div class="area a-sociais" onclick="irPara('sociais')">
           <div class="bolha"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/><path d="M19 11a2.5 2.5 0 1 0-2-4"/><path d="M5 11a2.5 2.5 0 1 1 2-4"/></svg></div>
           <h3>Atividades Sociais</h3>
-          <p>Campanha da Fraternidade Auta de Sousa e Programa de Promoção Social com gestantes.</p>
+          <p>Campanha Auta de Sousa, Promoção Social com gestantes, Lanche da Esperança e Unidos pelo Bem.</p>
           <span class="mais">Saiba mais →</span>
         </div>
       </div>
@@ -535,7 +535,7 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
           <span class="sigla">EADE</span>
           <h3>Estudo Aprofundado da Doutrina Espírita</h3>
           <p>Dá continuidade ao ESDE, aprofundando o estudo das obras da Codificação e das complementares para quem deseja avançar na doutrina.</p>
-          <span class="insc-quando">Consulte os horários</span>
+          <span class="insc-quando">Quintas-feiras, 19h30–21h · Remoto</span>
           <a class="btn btn-ouro" href="https://forms.gle/yeQvfPVg2LudLta37" target="_blank" rel="noopener">Inscrever-se</a>
         </div>
 
@@ -656,7 +656,7 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
           <div class="cab">Sexta</div>
           <div class="corpo">
             <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('estudos','at-gpeek')" title="Ver a descrição desta atividade">Grupo de Pesquisas e Estudos Espíritas Kardecista (GPEEK)</button><span class="hora">19h30 · quinzenal</span><span class="tag hib">Híbrido</span></div>
-            <div class="ativ"><span class="nome">Saúde Emocional com Joanna de Ângelis (SEJA)</span><span class="hora">19h · quinzenal</span><span class="tag pres">Presencial</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('estudos','at-seja')" title="Ver a descrição desta atividade">Saúde Emocional com Joanna de Ângelis (SEJA)</button><span class="hora">19h · quinzenal</span><span class="tag pres">Presencial</span></div>
           </div>
         </div>
         <!-- SÁBADO -->
@@ -674,7 +674,7 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
           <div class="cab">Domingo</div>
           <div class="corpo">
             <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('reunioes','at-palestra')" title="Ver a descrição desta atividade">Palestra Pública</button><span class="hora">9h30 · 2º domingo do mês</span><span class="tag mens">Mensal</span></div>
-            <div class="ativ"><span class="nome">Unidos pelo Bem — visita a instituições de longa permanência</span><span class="hora">13h30 · mensal</span><span class="tag mens">Mensal</span></div>
+            <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('sociais','at-unidos')" title="Ver a descrição desta atividade">Unidos pelo Bem — visita a instituições de longa permanência</button><span class="hora">13h30 · mensal</span><span class="tag mens">Mensal</span></div>
             <div class="ativ"><button type="button" class="nome nome-link" onclick="irPara('reunioes','at-ese')" title="Ver a descrição desta atividade">Estudo Sistematizado do Evangelho (ESE)</button><span class="hora">17h</span><span class="tag virt">Virtual · Meet</span></div>
           </div>
         </div>
@@ -749,6 +749,13 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
         <span class="info-linha">Sábados, às 17h · Presencial</span>
       </div>
 
+      <div id="at-eade" class="bloco">
+        <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 7.5l9 4.5 9-4.5L12 3Z"/><path d="M3 12l9 4.5 9-4.5"/><path d="M3 16.5 12 21l9-4.5"/></svg></div><div><span class="sigla">EADE</span><h3>Estudo Aprofundado da Doutrina Espírita</h3></div></div>
+        <p>O Estudo Aprofundado da Doutrina Espírita (EADE) permite aprofundar o estudo em temas que favorecem o desenvolvimento da consciência espírita-cristã, necessária ao aprimoramento moral do ser humano e progresso do Espírito.</p>
+        <span class="info-linha">Quintas-feiras, das 19h30 às 21h · Remoto</span>
+      </div>
+
+
       <div id="at-evangelizacao" class="bloco">
         <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/><path d="M9 12l3 3 3-3"/></svg></div><div><h3>Evangelização Infantojuvenil</h3></div></div>
         <p>A Evangelização da Assesesk atende crianças dos 7 aos 12 anos e adolescentes dos 13 aos 18 anos de idade por meio de um conjunto de atividades que visam, entre outros objetivos, estimular o desenvolvimento da postura ativa e participativa da criança ou jovem em seu processo evolutivo e contribuir para a formação integral e o exercício pleno do amor e da prática do bem comum. Fundamentadas no Evangelho de Jesus e nos ensinamentos da Doutrina Espírita, as atividades utilizam estratégias didáticas interativas, dinâmicas, vivenciais, lúdicas e afetivas, integradas ao cotidiano da vida em sociedade.</p>
@@ -778,6 +785,13 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
         <p>O MEP tem como objetivo o estudo teórico e prático da mediunidade, fundamentado na Codificação Espírita e nas obras complementares. O estudo é voltado aos interessados em aprofundar seus conhecimentos sobre o intercâmbio mediúnico e em vivenciar a educação mediúnica, proporcionando momentos de preparação aos que pretendem atuar em grupos mediúnicos.</p>
         <span class="info-linha">Sábados, às 16h · Presencial</span>
       </div>
+
+      <div id="at-seja" class="bloco">
+        <!-- descrição a ser incluída -->
+        <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z"/><path d="M6.4 12h2.3l1.3-2.2 1.6 4.2 1.2-2h3.2"/></svg></div><div><span class="sigla">SEJA</span><h3>Saúde Emocional com Joanna de Ângelis</h3></div></div>
+        <span class="info-linha">Sextas-feiras, às 19h · Presencial (quinzenal)</span>
+      </div>
+
     </div>
   </section>
   <div class="voltar-rodape"><a class="btn-voltar" onclick="irPara('atividades')">← Ver todas as atividades</a></div>
@@ -884,6 +898,20 @@ footer.rodape{background:var(--azul-esc);color:#cfe0ee;padding:56px 0 26px}
         <p>A reunião dos sábados é dividida em três partes: na primeira, são introduzidos os conhecimentos do Espiritismo e o ensino do Evangelho, nos 20 minutos iniciais, servindo também como harmonização; na segunda, são tratados assuntos pertinentes à saúde, educação, cidadania e outros de interesse das assistidas, em 30 minutos; e na terceira, um lanche é distribuído com as gestantes presentes nos 10 minutos finais do trabalho.</p>
         <span class="info-linha">Sábados, às 16h · Presencial</span>
       </div>
+
+      <div id="at-lanche" class="bloco">
+        <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18l-1.6 8.2a2 2 0 0 1-2 1.8H6.6a2 2 0 0 1-2-1.8L3 10Z"/><path d="M8 10 10.5 4"/><path d="M16 10 13.5 4"/></svg></div><div><h3>Lanche da Esperança</h3></div></div>
+        <p>Atividade realizada quinzenalmente, aos sábados, das 15h30 às 17h30, com o objetivo de preparar, montar e distribuir lanches para as mulheres atendidas pelo Programa de Promoção Social, destinado a gestantes em situação de vulnerabilidade e seus filhos.</p>
+        <span class="info-linha">Sábados, das 15h30 às 17h30 · Quinzenal</span>
+      </div>
+
+      <div id="at-unidos" class="bloco">
+        <!-- descrição a ser incluída -->
+        <div class="rot"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5 12 4l8.5 6.5"/><path d="M5.5 9.4V19a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V9.4"/><path d="M12 17.2s-2.6-1.6-2.6-3.5a1.5 1.5 0 0 1 2.6-1 1.5 1.5 0 0 1 2.6 1c0 1.9-2.6 3.5-2.6 3.5Z"/></svg></div><div><h3>Unidos pelo Bem</h3></div></div>
+        <span class="info-linha">Domingos, às 13h30 · Visita a instituições de longa permanência (mensal)</span>
+      </div>
+
+
     </div>
   </section>
   <div class="voltar-rodape"><a class="btn-voltar" onclick="irPara('atividades')">← Ver todas as atividades</a></div>
